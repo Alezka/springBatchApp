@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  batch:
+    initialize-schema: always
+    job:
+      enabled: false
+    #if want batch tables
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+#          auto: update
+#    show-sql: true
+#
+##deployment.type VM or PCF
+#deployment.type: VM
+#deployment.environment: DTF
+
+postgres:
+  datasource:
+    driverclass: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://localhost:5432/postgres?currentSchema=wsrecon
+    username: postgres
+    password: root
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        batch:
+          item:
+            database=debug:
+#  log4j.rootLogger=info, console
+#
+#  log4j.appender.console=org.apache.log4j.ConsoleAppender
+#  log4j.appender.console.layout=org.apache.log4j.PatternLayout
+#  log4j.appender.console.layout.ConversionPattern=%-4r [%t] %-5p %c %x - %m%n
+#
+#  log4j.logger.com.example=debug
